@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
       controls.text.controlMessageVisible(2000)
     )
   );
-  canvas.addEventListener("mousemove", () => controls.colors.setColor(ctx));
+  canvas.addEventListener("mousemove", (e) => controls.colors.setColor(e, ctx));
   window.addEventListener("resize", () => {
     setCanvasSize(canvas);
     controls.reset(canvas, background, icon);

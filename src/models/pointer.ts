@@ -71,14 +71,11 @@ export default class Pointer {
       const y =
         this.controls.mouse.y + counterY * zoomAreaItemWidth - areaWidth / 2;
 
-      context.fillStyle = zoomAreaItems[index];
-      context.fillRect(x, y, zoomAreaItemWidth, zoomAreaItemWidth);
-      if (index === middleItemIndex) {
-        this.controls.colors.toggleShadow(context, true);
-        context.lineWidth = 1;
-        context.strokeRect(x, y, zoomAreaItemWidth, zoomAreaItemWidth);
-        this.controls.colors.toggleShadow(context, false);
+      if (index !== middleItemIndex) {
+        context.fillStyle = zoomAreaItems[index];
+        context.fillRect(x, y, zoomAreaItemWidth, zoomAreaItemWidth);
       }
+
       counterX++;
       if (index % pixelCount === pixelCount - 1) {
         counterY++;

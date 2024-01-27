@@ -11,14 +11,9 @@ export default class Colors {
     this.selectedColor = "";
   }
 
-  setColor(context: CanvasRenderingContext2D) {
+  setColor(e: MouseEvent, context: CanvasRenderingContext2D) {
     if (this.controls.mouse.onHeader) return;
-    const imageData = context.getImageData(
-      this.controls.mouse.x,
-      this.controls.mouse.y,
-      1,
-      1
-    ).data;
+    const imageData = context.getImageData(e.x - 1 , e.y - 1, 1, 1).data;
     this.color = this.rgbToHex(
       `rgb(${imageData[0]}, ${imageData[1]}, ${imageData[2]})`
     );
