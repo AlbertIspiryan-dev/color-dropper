@@ -23,7 +23,7 @@ export default class Controls {
     background: HTMLImageElement,
     icon: HTMLImageElement
   ) {
-    this.reset(canvas, background, icon);
+    this.init(canvas, background, icon);
   }
 
   activateControls() {
@@ -38,7 +38,7 @@ export default class Controls {
     this.pointer.draw(context);
   }
 
-  reset(
+  private init(
     canvas: HTMLCanvasElement,
     background: HTMLImageElement,
     icon: HTMLImageElement
@@ -54,5 +54,18 @@ export default class Controls {
     this.background = new Background(this, background);
     this.icon = new Icon(this, icon);
     this.text = new Text(this);
+  }
+
+  reset(
+    canvas: HTMLCanvasElement,
+    background: HTMLImageElement,
+    icon: HTMLImageElement
+  ) {
+    this.canvas = canvas;
+    this.active = false;
+    this.width = this.canvas.width;
+    this.height = this.canvas.height;
+    this.background = new Background(this, background);
+    this.icon = new Icon(this, icon);
   }
 }
