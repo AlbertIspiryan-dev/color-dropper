@@ -15,10 +15,16 @@ Clone the repository and navigate to the project folder:
 
 ```bash
 git clone https://github.com/Mkaren92/color-dropper.git
+```
+
+```bash
 cd color-dropper
 ```
 Run following commands:
 
 ```bash
 npm install
+```
+```bash
 npm start
+```
